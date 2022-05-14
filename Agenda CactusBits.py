@@ -1,5 +1,5 @@
+lista = []
 def menu():
-    x = 0
     while True:
         print('=======================================')
         print('Agenda Telefonia'.center(40))
@@ -14,7 +14,7 @@ def menu():
         if opcao == 1:
             adcionar()
         elif opcao == 2:
-            listar(lista)
+            listar()
         elif opcao == 3:
             print('Finalizar Programa!')
             break
@@ -30,16 +30,19 @@ def adcionar():
 
     lista.append(contato)
     print('')
-    print('# Contato adicionado com sucesso! #')
+    print(f'# Contato {nome} adicionado com sucesso! #')
     print('')
     print('=======================================')
 
+
 # Listar os contatos
-def listar(lista):
+def listar():
     print('Lista de contatos: ')
-    print(lista)
+    if not lista:
+        print('Nenhum contato salvo!')
+    else:
+        for i in lista:
+            print(i)
 
 
-lista = []
 menu()
-
